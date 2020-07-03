@@ -1,0 +1,21 @@
+let parent = document.querySelector('.parent-modal'),
+    btn = document.querySelector('.btn-for-modal'),
+    X = document.querySelector('.X'),
+    section = document.querySelector('section');
+
+btn.addEventListener('click', ()=> {
+    parent.style.display = 'block';
+    section.style.filter = 'blur(5px)'
+});
+
+X.addEventListener('click', () => {
+    parent.style.display = 'none';
+    section.style.filter = 'blur(0px)';
+});
+
+parent.addEventListener('click', (e) => {
+    if (e.target.className == 'parent-modal') {
+        parent.style.display = 'none';
+        section.style.filter = 'blur(0px)';
+    }
+})
